@@ -12,14 +12,14 @@ abstract class NetworkBoundResource<ResultType, RequestType>(private val mExecut
         if (shouldFetch(dbSource)) {
             emit(Resource.Loading())
             when (val apiResponse = createCall().first()) {
-                is ApiResponse.success -> {
+                is ApiResponse.Success -> {
                     saveCallResult(apiResponse.data)
                     emitAll(loadFromDB().map { Resource.Success(it) })
                 }
                 is ApiResponse.Empty -> {
                     emitAll(loadFromDB().map { Resource.Success(it) })
                 }
-                is ApiResponse.error -> {
+                is ApiResponse.Error -> {
                     onFetchFailed()
                     emit(Resource.Error<ResultType>(apiResponse.errorMessage))
                 }

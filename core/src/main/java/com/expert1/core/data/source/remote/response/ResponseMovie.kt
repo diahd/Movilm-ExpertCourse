@@ -4,9 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class ResponseMovie(
 
-	@field:SerializedName("page")
-	val page: Int,
-
 	@field:SerializedName("results")
 	val results: List<ResultsItem>
 )

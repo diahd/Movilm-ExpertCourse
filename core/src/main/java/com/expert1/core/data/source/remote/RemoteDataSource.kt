@@ -17,12 +17,12 @@ class RemoteDataSource(private val apiService: ApiService){
                 val response = apiService.getMovie()
                 val dataArray = response.results
                 if (dataArray.isNotEmpty()){
-                    emit(ApiResponse.success(response.results))
+                    emit(ApiResponse.Success(response.results))
                 } else {
                     emit(ApiResponse.Empty)
                 }
             } catch (e: Exception) {
-                emit(ApiResponse.error(e.toString()))
+                emit(ApiResponse.Error(e.toString()))
             }
         }.flowOn(IO)
     }
@@ -31,9 +31,9 @@ class RemoteDataSource(private val apiService: ApiService){
         return flow {
             try {
                 val response = apiService.getMovieDetail(Id)
-                emit(ApiResponse.success(response))
+                emit(ApiResponse.Success(response))
             }catch (e: Exception) {
-                emit(ApiResponse.error(e.toString()))
+                emit(ApiResponse.Error(e.toString()))
             }
         }.flowOn(IO)
     }
@@ -44,12 +44,12 @@ class RemoteDataSource(private val apiService: ApiService){
                 val response = apiService.getTV()
                 val dataArray = response.resultsTV
                 if (dataArray.isNotEmpty()){
-                    emit(ApiResponse.success(response.resultsTV))
+                    emit(ApiResponse.Success(response.resultsTV))
                 } else {
                     emit(ApiResponse.Empty)
                 }
             } catch (e: Exception) {
-                emit(ApiResponse.error(e.toString()))
+                emit(ApiResponse.Error(e.toString()))
             }
         }.flowOn(IO)
     }
@@ -58,9 +58,9 @@ class RemoteDataSource(private val apiService: ApiService){
         return flow {
             try {
                 val response = apiService.getTVDetail(Id)
-                emit(ApiResponse.success(response))
+                emit(ApiResponse.Success(response))
             }catch (e: Exception) {
-                emit(ApiResponse.error(e.toString()))
+                emit(ApiResponse.Error(e.toString()))
             }
         }.flowOn(IO)
     }

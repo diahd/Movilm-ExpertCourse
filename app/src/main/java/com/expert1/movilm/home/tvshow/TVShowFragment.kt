@@ -16,7 +16,8 @@ import com.expert1.movilm.home.HomeViewModel
 
 class TVShowFragment : Fragment() {
 
-    private lateinit var fragmentTVShowBinding: FragmentTVShowBinding
+    private var _fragmentTVShowBinding: FragmentTVShowBinding? = null
+    private val fragmentTVShowBinding get() = _fragmentTVShowBinding as FragmentTVShowBinding
     private lateinit var adapterTv: TVShowAdapter
     private val tvViewModel: HomeViewModel by viewModel()
 
@@ -24,7 +25,7 @@ class TVShowFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        fragmentTVShowBinding = FragmentTVShowBinding.inflate(layoutInflater, container, false)
+        _fragmentTVShowBinding = FragmentTVShowBinding.inflate(layoutInflater, container, false)
         return fragmentTVShowBinding.root
     }
 
@@ -59,5 +60,10 @@ class TVShowFragment : Fragment() {
             setHasFixedSize(true)
             adapter = adapterTv
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _fragmentTVShowBinding = null
     }
 }

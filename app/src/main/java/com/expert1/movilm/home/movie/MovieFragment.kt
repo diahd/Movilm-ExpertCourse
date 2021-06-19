@@ -16,7 +16,8 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class MovieFragment : Fragment() {
 
-    private lateinit var fragmentMovieBinding: FragmentMovieBinding
+    private var _fragmentMovieBinding: FragmentMovieBinding? = null
+    private val fragmentMovieBinding get() = _fragmentMovieBinding as FragmentMovieBinding
     private lateinit var adapter2: MovieAdapter
     private val movieViewModel: HomeViewModel by viewModel()
 
@@ -24,7 +25,7 @@ class MovieFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        fragmentMovieBinding = FragmentMovieBinding.inflate(layoutInflater, container, false)
+        _fragmentMovieBinding = FragmentMovieBinding.inflate(layoutInflater, container, false)
         return fragmentMovieBinding.root
     }
 
@@ -61,5 +62,10 @@ class MovieFragment : Fragment() {
                 startActivity(moveActivity)
             }
         })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _fragmentMovieBinding = null
     }
 }

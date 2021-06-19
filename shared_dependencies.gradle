@@ -20,7 +20,7 @@ dependencies {
     implementation 'androidx.activity:activity-ktx:1.1.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
     implementation "androidx.legacy:legacy-support-v4:$legacy_support_version"
-    implementation "androidx.paging:paging-runtime:$pagingVersion"
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
     implementation "com.github.bumptech.glide:glide:$glide_version"
     implementation 'jp.wasabeef:glide-transformations:4.3.0'
     implementation "com.airbnb.android:lottie:3.4.0"
@@ -45,4 +45,7 @@ dependencies {
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
+
+    //LeakCanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
 }

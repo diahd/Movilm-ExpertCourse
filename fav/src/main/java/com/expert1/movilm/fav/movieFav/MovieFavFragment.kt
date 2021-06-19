@@ -20,7 +20,8 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class MovieFavFragment : Fragment() {
 
-    private lateinit var binding: FragmentMovieFavBinding
+    private var _binding: FragmentMovieFavBinding? = null
+    private val binding get() = _binding as FragmentMovieFavBinding
     private lateinit var adapterMovie: MovieAdapter
     private val viewModel: FavoriteViewModel by viewModel()
 
@@ -28,7 +29,7 @@ class MovieFavFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        binding = FragmentMovieFavBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentMovieFavBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -79,4 +80,9 @@ class MovieFavFragment : Fragment() {
             }
         }
     })
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

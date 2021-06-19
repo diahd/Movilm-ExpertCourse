@@ -20,11 +20,6 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var detailBinding: ContentDetailBinding
     private val viewModel: DetailViewModel by viewModel()
 
-    companion object {
-        const val EXTRA_ID = "extra_id"
-        const val EXTRA_DETAIL = "extra_detail"
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -136,5 +131,10 @@ class DetailActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    companion object {
+        const val EXTRA_ID = "extra_id"
+        const val EXTRA_DETAIL = "extra_detail"
     }
 }
