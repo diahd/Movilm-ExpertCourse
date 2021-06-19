@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Movilm</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_detail_film">Detail Film</string>
+    <string name="title">Title is here</string>
+    <string name="genre">Genre: </string>
+    <string name="date_release">Date Release: %s</string>
+    <string name="overview">Overview</string>
+    <string name="overview_text">Overview is here</string>
+    <string name="score">%s/10</string>
+    <string name="movie">Movie</string>
+    <string name="tvshow">TV Show</string>
+    <string name="background">background</string>
+    <string name="poster">poster</string>
+    <string name="add">add list</string>
+    <string name="rate">rate</string>
+    <string name="share">share</string>
+    <string name="image_poster">Image Poster</string>
+    <string name="btn_fav">Favorite</string>
+    <string name="message_undo">Undo delete the item?</string>
+    <string name="add_fav">Added to my favorite.</string>
+    <string name="add_unfav">Removed from my favorite.</string>
+    <string name="message_ok">OK.</string>
+    <string name="title_fav">Favorite</string>
+</resources>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:descendantFocusability="blocksDescendants"
+    android:paddingBottom="30dp"
+    android:background="@color/black">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/img_bg_poster"
+        android:background="@color/teal_700"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/background" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:id="@+id/img_poster"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="@+id/img_bg_poster"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/poster" />
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/candal"
+        android:maxLines="2"
+        android:paddingHorizontal="15dp"
+        android:text="@string/title"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_bg_poster" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:progressTint="@color/ratingStar"
+        android:isIndicator="true"
+        android:progressBackgroundTint="#D1CDCD"
+        android:stepSize="0.1"
+        android:numStars="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_score"
+        android:text="@string/score"
+        android:textColor="@color/teal_200"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ratingBar"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_release"
+        android:textColor="@color/gray"
+        android:textSize="16sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/overview"
+        android:text="@string/overview"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_date" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_overview"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/overview_text"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overview"
+        />
+
+    <ImageButton
+        android:id="@+id/img_add"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="80dp"
+        android:background="@drawable/bg_icon"
+        app:srcCompat="@drawable/ic_favorite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_overview"
+        android:contentDescription="@string/add"
+        tools:ignore="RtlSymmetry" />
+
+    <ImageButton
+        android:id="@+id/img_rate"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/bg_icon"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/img_add"
+        app:layout_constraintTop_toBottomOf="@+id/txt_overview"
+        app:srcCompat="@drawable/ic_thumb_up"
+        android:contentDescription="@string/rate"
+        tools:ignore="RtlSymmetry" />
+
+    <ImageButton
+        android:id="@+id/img_share"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/bg_icon"
+        app:layout_constraintStart_toEndOf="@+id/img_rate"
+        app:layout_constraintTop_toBottomOf="@+id/txt_overview"
+        app:srcCompat="@drawable/ic_share"
+        android:contentDescription="@string/share"
+        tools:ignore="RtlSymmetry" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progressBar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loadingblack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

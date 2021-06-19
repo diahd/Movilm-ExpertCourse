@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="image_poster">Image Poster</string>
+    <string name="title">Title is here</string>
+    <string name="score">%s/10</string>
+</resources>
