@@ -11,13 +11,17 @@
 #-keep class com.google.gson.stream.** { *; }
 
 ##---------------Begin: proguard configuration for SQLCipher  ----------
+#noinspection ShrinkerUnresolvedReference
 -keep,includedescriptorclasses class net.sqlcipher.** { *; }
+#noinspection ShrinkerUnresolvedReference
 -keep,includedescriptorclasses interface net.sqlcipher.** { *; }
 
 
 # Application classes that will be serialized/deserialized over Gson
 # -keep class com.expert1.core.data.source.remote.response.** { <fields>; }
+#noinspection ShrinkerUnresolvedReference
 -keep class com.google.gson.examples.android.model.** { <fields>; }
+#noinspection ShrinkerUnresolvedReference
 -keep class com.expert1.movilm.fav.FavoriteActivity {public *;}
 
 # Prevent proguard from stripping interface information from TypeAdapter, TypeAdapterFactory,
